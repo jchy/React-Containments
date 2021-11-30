@@ -26,6 +26,15 @@ const Row = ({ children, gap = 0, p = 0, border = 0 }) => {
   );
 };
 
+const Name = ({ children, left = "", color = "" }) => {
+  return (
+    <div style={{ float: `${left}`, color: `${color}`, textAlign: `${left}` }}>
+      {" "}
+      {children}{" "}
+    </div>
+  );
+};
+
 export default function App() {
   return (
     <div className="App">
@@ -44,6 +53,10 @@ export default function App() {
         <div>Hello</div>
         <div>Hello</div>
       </Row>
+      <Name left={"left"} color={"green"}>
+        <p>Author : </p>
+        <p> @ Jaswant Chduahry</p>
+      </Name>
     </div>
   );
 }
