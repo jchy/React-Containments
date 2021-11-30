@@ -1,4 +1,6 @@
 import "./styles.css";
+import Button from "@mui/material/Button";
+
 const Icon = ({ title, left }) => (
   <>
     <div>
@@ -7,7 +9,7 @@ const Icon = ({ title, left }) => (
   </>
 );
 
-const Box = ({ children }) => {
+const Boxs = ({ children }) => {
   return <div>{children}</div>;
 };
 
@@ -40,13 +42,13 @@ export default function App() {
     <div className="App">
       <h2> React Containment </h2>
       <Icon left={<>@</>} title={"hello world"} />
-      <Box>
+      <Boxs>
         <div>hello</div>
         <div>hello</div>
         <div>hello</div>
         <div>hello</div>
         <div>hello</div>
-      </Box>
+      </Boxs>
       <Row p={10} gap={12} border={2}>
         <div>Hello</div>
         <div style={{ color: "green" }}>Hello</div>
@@ -57,6 +59,7 @@ export default function App() {
         <p>Author : </p>
         <p> @ Jaswant Chduahry</p>
       </Name>
+      <Button variant="contained">Hello World</Button>
     </div>
   );
 }
