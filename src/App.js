@@ -1,9 +1,49 @@
 import "./styles.css";
+const Icon = ({ title, left }) => (
+  <>
+    <div>
+      <h3>{title}</h3>
+    </div>
+  </>
+);
+
+const Box = ({ children }) => {
+  return <div>{children}</div>;
+};
+
+const Row = ({ children, gap = 0, p = 0, border = 0 }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap,
+        padding: p,
+        border: `${border}px solid black`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 export default function App() {
   return (
     <div className="App">
       <h2> React Containment </h2>
+      <Icon left={<>@</>} title={"hello world"} />
+      <Box>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+      </Box>
+      <Row p={10} gap={12} border={2}>
+        <div>Hello</div>
+        <div style={{ color: "green" }}>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+      </Row>
     </div>
   );
 }
